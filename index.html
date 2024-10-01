@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <title>Comma Flash</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="css/globals.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="hero">
+        <h1 class="hero-title">flash.comma.ai</h1>
+        <p class="hero-subtitle">This tool allows you to flash AGNOS onto your comma device.</p>
+        <p class="hero-subtitle">AGNOS is the Ubuntu-based operating system for your <a class="link" href="https://comma.ai/shop/comma-3x" target="_blank">comma 3/3X</a>.</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Requirements</h2>
+        <ul class="unordered-list">
+            <li class="unordered-list-item"><span>A web browser which supports WebUSB (such as Google Chrome, Microsoft Edge, Opera), running on Windows, macOS, Linux, or Android.</span></li>
+            <li class="unordered-list-item"><span>A USB-C cable to power your device outside the car.</span></li>
+            <li class="unordered-list-item"><span>Another USB-C cable to connect the device to your computer.</span></li>
+        </ul>
+
+        <h3 class="section-subtitle">USB Driver</h3>
+        <p class="section-desc">You need additional driver software for Windows before you connect your device.</p>
+        <ol class="ordered-list" id="usb-driver-list">
+            <li class="ordered-list-item"><span>Download and install <a class="link" href="https://zadig.akeo.ie/" target="_blank">Zadig</a>.</span></li>
+            <li class="ordered-list-item"><span>Under <code>Device</code> in the menu bar, select <code>Create new Device</code>.</span></li>
+            <img class="usb-driver-img" src="assets/usb-driver-step-2.png" alt="USB Driver Step 2 (Zadig Interface)">
+            <li class="ordered-list-item"><span>Fill in three fields. The first field is just a description and you can fill in anything. The next two fields are very important. Fill them in with <code>05C6</code> and <code>9008</code> respectively. Press "Install Driver" and give it a few minutes to install.</span></li>
+            <img class="usb-driver-img" src="assets/usb-driver-step-3.png" alt="USB Driver Step 3 (Zadig Interface)">
+        </ol>
+        No additional software is required for macOS or Linux.
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">QDL Mode</h2>
+        <p class="section-desc">Follow these steps to put your device into QDL mode:</p>
+        <ol class="ordered-list">
+            <li class="ordered-list-item"><span>Power off the device and wait for the LEDs to switch off.</span></li>
+            <li class="ordered-list-item"><span>Connect the device to your computer using the USB-C port<span class="bold-span">(port 2)</span>.</span></li>
+            <li class="ordered-list-item"><span>Connect power to the OBD-C port<span class="bold-span">(port 1)</span>.</span></li>
+            <li class="ordered-list-item"><span>The device then should be visible as an option when choosing the device to flash</span></li>
+            <img class="qdl-mode-img" src="assets/qdl-mode.svg" alt="QDL Mode">
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Flashing</h2>
+        <p class="section-desc">After your device is in QDL mode, you can click the button to start flashing. A prompt may appear to select a device; choose the device starts with <code>QUSB_BULK</code>.</p>
+        <p class="section-desc">The process can take 30+ minutes depending on your internet connection and system performance. Do not unplug the device until all steps are complete.</p>
+    </div>  
+
+    <div class="section"> 
+        <h2 class="section-title">Troubleshooting</h2>
+        <h3 class="section-subtitle">Too slow</h3>
+        <p class="section-desc">It is recommended that you use a USB 3.0 cable when flashing since it will speed up the flashing time by a lot.</p>
+        <h3 class="section-subtitle">Cannot enter QDL</h3>
+        <p class="section-desc">Try using a different USB cable or USB port. Sometimes USB 2.0 ports work better than USB 3.0 (blue) ports. If you're using a USB hub, try connecting the device directly to your computer, or alternatively use a USB hub between your computer and the device.
+        </p>
+        <h3 class="section-subtitle">My device&apos;s screen is blank</h3>
+        <p class="section-desc">The device screen will be blank in QDL mode, but you can verify that it is in QDL if the device shows up when you press the Flash icon.
+        </p>
+        <h3 class="section-subtitle">After flashing, device says unable to mount data partition</h3>
+        <p class="section-desc">This is expected after the filesystem is erased. Press confirm to finish resetting your device.</p>
+        <h3 class="section-subtitle">General Tips</h3>
+        <ul class="unordered-list">
+            <li class="unordered-list-item"><span>Try another computer OS</span></li>
+            <li class="unordered-list-item"><span>Try different USB ports on your computer</span></li>
+            <li class="unordered-list-item"><span>Try different USB-C cables, including the OBD-C cable that came with the device</span></li>
+        </ul>
+        <h3 class="section-subtitle">Other questions</h3>
+        <p class="section-desc">If you need help, join our <a class="link" href="https://discord.comma.ai" target="_blank">Discord server</a> and go to the <span class="bold-span">#hw-three-3x</span> channel</p>
+    </div>
+</body>
+</html>
